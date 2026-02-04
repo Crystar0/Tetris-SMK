@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game Tetris SMK</title>
+        <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/0e/58/cf/0e58cf2800ca10759d99f723a3dc4716.jpg"> <!--miku is life, miku is love :v-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+<div id="menu">
+    <img src="c:\Users\RPL 2025\Downloads\WhatsApp_Image_2026-01-19_at_09.36.31-removebg-preview.png" alt="RPL Logo" class="menu-logo">
+    <img src="c:\Users\RPL 2025\Downloads\unnamed-removebg-preview.png" alt="SMK Logo" class="menu-logo" position="right">
+    
+    <h1 id="tetris-title">
+    <span style="--d:0s">T</span>
+    <span style="--d:0.1s">E</span>
+    <span style="--d:0.2s">T</span>
+    <span style="--d:0.3s">R</span>
+    <span style="--d:0.4s">I</span>
+    <span style="--d:0.5s">S</span>
+</h1>
+
+<div id="Subtitle">
+    <h2> SMK SILIWANGI AMS BANJARSARI</h2>
+</div>
+
+    <div class="dropdown">
+    <button class="dropbtn" onclick="toggleMenu()">▶ Play</button>
+    <div class="dropdown-content">
+    <a href="#" onclick="startGame()">Start Game</a>
+    <a href="#" onclick="openSettings()">Settings</a>
+    <a href="#" onclick="showCredits()">Credits</a>
+
+    <div class="controls-box">
+        <strong>TUTORIAL</strong><br>
+        ⬅ ➡ Move<br>
+        ⬇ Drop<br>
+        ⬆ Rotate<br>
+        C = Hold
+    </div>
+
+    <a href="#" onclick="exitGame()">Exit</a>
+</div>
+
+</div>
+</div>
+
+<div id="settings-panel">
+    <h2>SETTINGS</h2>
+
+    <label>Game Speed</label> 
+    <select id="speed-select">
+        <option value="1000">Baby</option>
+        <option value="500" selected>Normal</option>
+        <option value="100">Pro</option>
+        <option value="15">HELL</option>
+        <option value="1">IMPOSSIBLE 😈</option>
+    </select>
+    <label style="margin-top:15px;">
+    <input type="checkbox" id="glitch-toggle" checked>
+    Enable Glitch Effect
+</label>
+
+
+    <button onclick="applySettings()">Apply</button>
+    <button onclick="closeSettings()">Close</button>
+</div>
+
+<div id="credits-panel">
+    <h2>CREDITS</h2>
+
+    <div class="credits-box">
+        <p><strong>Game</strong><br>Tetris SMK</p>
+
+        <p><strong>Programmer</strong><br>Adrian Aditya</p>
+
+        <p><strong>UI / Animation</strong><br>Adrian Aditya</p>
+
+        <p><strong>Gameplay Logic</strong><br>ChatGPT</p>
+
+        <p class="thanks">Thanks for playing <3</p>
+    </div>
+
+    <button onclick="closeCredits()">Close</button>
+</div>
+
+<div id="gameover-panel">
+    <h2>GAME OVER</h2>
+
+    <img
+        src="c:\Users\RPL 2025\Downloads\images.jpg"
+        alt="Game Over"
+        class="gameover-img"
+    >
+
+    <p>Your Score</p>
+    <div id="final-score">0</div>
+
+    <button onclick="restartGame()">Restart</button>
+    <button onclick="backToMenu()">Main Menu</button>
+</div>
+
+
+<div id="game-container">
+
+    <!-- GAME ROW -->
+    <div id="game-row">
+
+        <img 
+            src="c:\Users\RPL 2025\Downloads\WhatsApp_Image_2026-01-19_at_09.36.31-removebg-preview.png"
+            alt="Left Logo"
+            id="logo-left"
+            class="game-logo"
+        >
+
+        <canvas id="NEXT" width="100" height="100"></canvas>
+
+        <canvas id="GAME" width="200" height="400" style="display:none;"></canvas>
+
+        <img 
+            src="c:\Users\RPL 2025\Downloads\unnamed-removebg-preview.png"
+            alt="SMK Logo"
+            id="logo-right"
+            class="game-logo"
+        >
+
+    </div>
+
+    <!-- COMMENTARY BAR -->
+    <div id="commentary">READY</div>
+
+</div>
+
+
+</div>
+
+    <div id="score-panel">
+    <div class="score-title">SCORE</div>
+    <div id="score-value">0</div>
+
+</div>
+
+</div>
+
+<script src="Tetris.js"></script>
+
+<div id="exit-overlay">
+    <img src="c:\Users\RPL 2025\Downloads\0589e0bc-af0e-42e1-a8bf-1b8241cf29e5-1679531296284.webp" alt="Exit Meme">
+    <p style="color: cyan;">Do you REALLY want to exit the game?</p>
+    <button onclick="confirmExit()">Yes 😈</button>
+    <button onclick="cancelExit()">No 😁👍</button>
+</div>
+
+</body>
+</html>
